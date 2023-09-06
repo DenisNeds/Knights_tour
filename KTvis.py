@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Read data from the output file
+# bere podatke iz output_data.txt
 with open("output_data.txt", "r") as file:
     lines = file.readlines()
 
@@ -9,11 +9,11 @@ data = [list(map(int, line.strip().split("\t"))) for line in lines]
 
 data_array = np.array(data)
 
-# Possible moves
+# mozni premiki
 cx = [1, 1, 2, 2, -1, -1, -2, -2]
 cy = [2, -2, 1, -1, 2, -2, 1, -1]
 
-# Create a black and white background
+#crno belo ozadje
 board_size_x = len(data_array[0])
 board_size_y = len(data_array)
 chessboard = np.zeros((board_size_y, board_size_x))
